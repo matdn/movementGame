@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Node.js/Python App</title>
-  </head>
-  <body>
-    <h1>My Node.js/Python App</h1>
-    <p>Welcome to my app!</p>
-    <button id="myButton">Click me</button>
-
-    <script>
-      const button = document.getElementById('myButton');
-      button.addEventListener('click', () => {
-        fetch('/data')
-          .then(response => response.text())
-          .then(data => console.log(data))
-          .catch(error => console.error(error));
-      });
-    </script>
-  </body>
+<html lang="en" onclick="jump()">
+<head>
+    <meta charset="UTF-8">
+    <title>Jump Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="display">
+        <div class="game">
+            <div id="character">
+            
+            </div>
+            <div id="block"></div>
+        </div>
+        <p>Score: <span id="scoreSpan"></span></p>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+    const button = document.getElementById('myButton');
+    button.addEventListener('click', () => {
+      fetch('/data')
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    });
+  </script>
 </html>
