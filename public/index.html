@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Node.js/Python App</title>
+  </head>
+  <body>
+    <h1>My Node.js/Python App</h1>
+    <p>Welcome to my app!</p>
+    <button id="myButton">Click me</button>
+
+    <script>
+      const button = document.getElementById('myButton');
+      button.addEventListener('click', () => {
+        fetch('/data')
+          .then(response => response.text())
+          .then(data => console.log(data))
+          .catch(error => console.error(error));
+      });
+    </script>
+  </body>
+</html>
