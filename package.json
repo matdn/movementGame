@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/matdn/movementGame#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "python-shell": "^5.0.0"
+    "puppeteer": "^19.7.2",
+    "python-shell": "^5.0.0",
+    "socket.io": "^4.6.1"
   }
 }

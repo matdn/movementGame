@@ -17,13 +17,9 @@
     </div>
 </body>
 <script src="script.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script>
-    const button = document.getElementById('myButton');
-    button.addEventListener('click', () => {
-      fetch('/data')
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-    });
-  </script>
+    var socket = io();
+</script>
+  
 </html>
