@@ -26,7 +26,6 @@ app.use(express.static('public'));
 app.use(cors())
 
 app.get('/jump', (req, res) => {
-  console.log('jump');
   io.emit('jump', null);
   res.send('Données reçues !');
 });
