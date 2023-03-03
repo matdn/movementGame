@@ -9,7 +9,7 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 
 const { Server } = require("socket.io");
-const io = new Server(server);
+
 
 let i = 0
 let color = [0,0,0]
@@ -27,13 +27,22 @@ app.use(cors())
 
 app.get('/jump', (req, res) => {
   console.log('jump');
-
+  io.on('connection', function (socket) {
+    io.emit('jump', null);
+  })
   res.send('Données reçues !');
 });
 
 app.listen(3000, () => {
   console.log('Serveur en écoute sur le port 3000...');
 });
+
+const io = new Server(3001,{
+  cors: {origin:'*',}
+});
+io.on('connection', function (socket) {
+  console.log('User connected');
+})
 
 // const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
