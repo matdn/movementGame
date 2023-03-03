@@ -27,9 +27,7 @@ app.use(cors())
 
 app.get('/jump', (req, res) => {
   console.log('jump');
-  io.on('connection', function (socket) {
-    io.emit('jump', null);
-  })
+  io.emit('jump', null);
   res.send('Données reçues !');
 });
 
@@ -42,7 +40,9 @@ const io = new Server(3001,{
 });
 io.on('connection', function (socket) {
   console.log('User connected');
+  
 })
+
 
 // const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

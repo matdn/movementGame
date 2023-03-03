@@ -16,11 +16,15 @@
         <p>Score: <span id="scoreSpan"></span></p>
     </div>
 </body>
-<!-- <script src="script.js"></script> -->
+<script src="script.js"></script>
 <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
 <script>
     let socket =  io.connect("localhost:3001");
-    socket.on('jump', jump())
+
+    socket.on('jump', () => {
+        jump()
+    })
+    
 </script>
   
 </html>

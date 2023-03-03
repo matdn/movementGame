@@ -1,4 +1,4 @@
-var MyApp = require('../app');
+
 // Code à exécuter une fois que la page est chargée
 var character = document.getElementById("character");
 var block = document.getElementById("block");
